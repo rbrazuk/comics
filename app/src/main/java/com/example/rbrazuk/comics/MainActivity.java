@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         intent = new Intent(MainActivity.this,ListActivity.class);
 
         sortSpinner = (Spinner) findViewById(R.id.sort_options_spinner);

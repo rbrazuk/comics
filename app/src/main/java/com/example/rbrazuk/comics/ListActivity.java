@@ -79,7 +79,6 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
                 Comic comic = (Comic) parent.getItemAtPosition(position);
 
                 Intent i = new Intent(ListActivity.this,ComicDetail.class);
@@ -89,10 +88,8 @@ public class ListActivity extends AppCompatActivity {
                 Long idNumber = comic.getId();
                 System.out.println(idNumber);
 
-
             }
         });
-
     }
 
     @Override
@@ -130,7 +127,6 @@ public class ListActivity extends AppCompatActivity {
         Collections.sort(comicArrayList,sortType);
         mComicsAdapter = new ComicsAdapter(this,comicArrayList);
         mListView = (ListView) findViewById(R.id.comics_list_view);
-
 
         mListView.setAdapter(mComicsAdapter);
 

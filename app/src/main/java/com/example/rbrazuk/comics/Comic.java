@@ -22,6 +22,7 @@ public class Comic extends SugarRecord implements Comparable {
     private String mArtist;
     private Boolean mOnWishList;
     private String mLocalDate;
+    private String mYearReleased;
 
 
     public String getTitle() {

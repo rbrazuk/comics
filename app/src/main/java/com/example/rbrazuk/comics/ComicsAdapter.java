@@ -34,7 +34,6 @@ public class ComicsAdapter extends ArrayAdapter<Comic> {
         TextView tvWriter = (TextView) convertView.findViewById(R.id.comic_list_view_writer);
         TextView tvArtist = (TextView) convertView.findViewById(R.id.comic_list_view_artist);
 
-
         tvTitle.setText(comic.getTitle());
 
         String volume = comic.getVolume();
