@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sort_options">
+        <item>Title</item>
+        <item>Publisher</item>
+        <item>Writer</item>
+        <item>Artist</item>
+        <item>Date</item>
+    </string-array>
+</resources>

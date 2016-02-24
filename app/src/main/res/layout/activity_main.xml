@@ -16,5 +16,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/show_list_button"
         android:text="Show List"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sort by:"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sort_options_spinner"
+        android:entries="@array/sort_options"
+        android:prompt="@string/sort_by"/>
 
 </LinearLayout>

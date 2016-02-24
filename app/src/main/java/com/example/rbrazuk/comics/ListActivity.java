@@ -24,6 +24,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ListActivity extends AppCompatActivity {
@@ -39,7 +40,7 @@ public class ListActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        updateData();
+        updateData(Comic.TitleComparator);
 
         mListView = (ListView) findViewById(R.id.comics_list_view);
 
@@ -56,7 +57,7 @@ public class ListActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         Comic comic = (Comic) parent.getItemAtPosition(position);
                         comic.delete();
-                        updateData();
+                        updateData(Comic.TitleComparator);
                     }
                 });
 
@@ -117,16 +118,16 @@ public class ListActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
 
-        updateData();
+        updateData(Comic.TitleComparator);
     }
 
-    private void updateData() {
+    private void updateData(Comparator sortType) {
 
         List<Comic> comicArray = Comic.listAll(Comic.class);
         ArrayList comicArrayList = new ArrayList();
         comicArrayList.addAll(comicArray);
 
-        Collections.sort(comicArrayList,Comic.TitleComparator);
+        Collections.sort(comicArrayList,sortType);
         mComicsAdapter = new ComicsAdapter(this,comicArrayList);
         mListView = (ListView) findViewById(R.id.comics_list_view);
 
@@ -135,9 +136,8 @@ public class ListActivity extends AppCompatActivity {
 
         mComicsAdapter.notifyDataSetChanged();
         System.out.println("update data called");
-
-
-
     }
+
+
 
 }

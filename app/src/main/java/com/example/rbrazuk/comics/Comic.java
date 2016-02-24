@@ -97,6 +97,16 @@ public class Comic extends SugarRecord implements Comparable {
         }
     };
 
+    public static Comparator<Comic> PublisherComparator = new Comparator<Comic>() {
+        @Override
+        public int compare(Comic c1, Comic c2) {
+
+            String publisher1 = c1.getPublisher().toUpperCase();
+            String publisher2 = c2.getPublisher().toUpperCase();
+            return publisher1.compareTo(publisher2);
+        }
+    };
+
 
     @Override
     public int compareTo(Object another) {
