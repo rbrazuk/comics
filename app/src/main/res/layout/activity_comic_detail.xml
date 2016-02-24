@@ -17,31 +17,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/comic_detail_title"
+        android:textSize="25dp"
+        android:textStyle="bold"
         tools:text="title"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/comic_detail_volume"
-        tools:text="volume"/>
+        android:textSize="20dp"
+        tools:text="Volume 100"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/comic_detail_publisher"
-        tools:text="publisher"/>
+        android:textSize="20dp"
+        tools:text="Publisher: Comic Publisher"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/comic_detail_writer"
-        tools:text="writer"/>
+        android:textSize="20dp"
+        tools:text="Writer: Writer McWriterson"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/comic_detail_artist"
-        tools:text="artist"/>
+        android:textSize="20dp"
+        tools:text="Artist: Artist McDrawerson"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/comic_detail_date"
-        tools:text="date"/>
+        android:textSize="20dp"
+        tools:text="Published: 2000"/>
 
 </LinearLayout>
