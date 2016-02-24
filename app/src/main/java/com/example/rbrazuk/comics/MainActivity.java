@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         comicsArrayList = new ArrayList<>();
 
         comicsArrayList.addAll(comicsArray);
+
+        Collections.sort(comicsArrayList,Comic.TitleComparator);
 
 
         showListButton.setOnClickListener(new View.OnClickListener() {

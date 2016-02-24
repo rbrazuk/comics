@@ -41,14 +41,11 @@ public class ComicsAdapter extends ArrayAdapter<Comic> {
         if(TextUtils.isEmpty(volume)) {
             tvVolume.setText("");
         } else {
-            tvVolume.setText(volume);
+            tvVolume.setText("Vol " + volume);
         }
-
-
 
         tvWriter.setText(comic.getWriter());
         tvArtist.setText(comic.getArtist());
-
 
         return convertView;
     }

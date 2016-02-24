@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ListActivity extends AppCompatActivity {
@@ -124,6 +125,8 @@ public class ListActivity extends AppCompatActivity {
         List<Comic> comicArray = Comic.listAll(Comic.class);
         ArrayList comicArrayList = new ArrayList();
         comicArrayList.addAll(comicArray);
+
+        Collections.sort(comicArrayList,Comic.TitleComparator);
         mComicsAdapter = new ComicsAdapter(this,comicArrayList);
         mListView = (ListView) findViewById(R.id.comics_list_view);
 
