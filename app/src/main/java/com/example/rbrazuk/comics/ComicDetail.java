@@ -46,17 +46,7 @@ public class ComicDetail extends AppCompatActivity {
             }
         });
 
-        /*Long idNumber = getIntent().getLongExtra("id",-1L);
-
-        Comic comic = Comic.findById(Comic.class,idNumber);
-        System.out.println(comic.getTitle());
-
-        mTitle.setText(comic.getTitle());
-        mVolume.setText("Vol " + comic.getVolume());
-        mPublisher.setText(comic.getPublisher());
-        mWriter.setText(comic.getWriter());
-        mArtist.setText(comic.getArtist());
-        mDate.setText(comic.getLocalDate());*/
+        
 
         updateData();
 

@@ -45,7 +45,6 @@ public class EditComic extends AppCompatActivity {
             }
         });
 
-
         Long id = getIntent().getLongExtra("id", -1L);
 
         comic = Comic.findById(Comic.class,id);
