@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +18,7 @@ public class ComicDetail extends AppCompatActivity {
     TextView mWriter;
     TextView mArtist;
     TextView mDate;
+    Button btEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +33,20 @@ public class ComicDetail extends AppCompatActivity {
         mWriter = (TextView) findViewById(R.id.comic_detail_writer);
         mArtist = (TextView) findViewById(R.id.comic_detail_artist);
         mDate = (TextView) findViewById(R.id.comic_detail_date);
+        btEdit = (Button) findViewById(R.id.bt_edit);
 
-        Long idNumber = getIntent().getLongExtra("id",-1L);
+        btEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Long idNumber = getIntent().getLongExtra("id",-1L);
+
+                Intent intent = new Intent(ComicDetail.this,EditComic.class);
+                intent.putExtra("id",idNumber);
+                startActivity(intent);
+            }
+        });
+
+        /*Long idNumber = getIntent().getLongExtra("id",-1L);
 
         Comic comic = Comic.findById(Comic.class,idNumber);
         System.out.println(comic.getTitle());
@@ -41,7 +56,15 @@ public class ComicDetail extends AppCompatActivity {
         mPublisher.setText(comic.getPublisher());
         mWriter.setText(comic.getWriter());
         mArtist.setText(comic.getArtist());
-        mDate.setText(comic.getLocalDate());
+        mDate.setText(comic.getLocalDate());*/
+
+        updateData();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
 
     }
 
@@ -62,5 +85,19 @@ public class ComicDetail extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void updateData() {
+        Long idNumber = getIntent().getLongExtra("id",-1L);
+
+        Comic comic = Comic.findById(Comic.class,idNumber);
+        System.out.println(comic.getTitle());
+
+        mTitle.setText(comic.getTitle());
+        mVolume.setText("Vol " + comic.getVolume());
+        mPublisher.setText(comic.getPublisher());
+        mWriter.setText(comic.getWriter());
+        mArtist.setText(comic.getArtist());
+        mDate.setText(comic.getLocalDate());
     }
 }

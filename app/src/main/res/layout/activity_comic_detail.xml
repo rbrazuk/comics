@@ -50,5 +50,10 @@
         android:id="@+id/comic_detail_date"
         android:textSize="20dp"
         tools:text="Published: 2000"/>
+    <Button
+        android:id="@+id/bt_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"/>
 
 </LinearLayout>
