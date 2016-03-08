@@ -59,7 +59,7 @@ public class ListActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         Comic comic = (Comic) parent.getItemAtPosition(position);
                         comic.delete();
-                        updateData(Comic.TitleComparator);
+                        updateData(Comic.TitleAndVolumeComparator);
                     }
                 });
 

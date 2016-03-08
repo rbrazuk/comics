@@ -31,6 +31,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ListActivity"/>
         </activity>
+        <activity android:name=".EditComic">
+        </activity>
     </application>
 
 </manifest>
