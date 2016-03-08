@@ -40,7 +40,9 @@ public class ListActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        updateData(Comic.TitleComparator);
+        updateData(Comic.TitleAndVolumeComparator);
+
+
 
         mListView = (ListView) findViewById(R.id.comics_list_view);
 
@@ -115,7 +117,7 @@ public class ListActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
 
-        updateData(Comic.TitleComparator);
+        updateData(Comic.TitleAndVolumeComparator);
     }
 
     private void updateData(Comparator sortType) {

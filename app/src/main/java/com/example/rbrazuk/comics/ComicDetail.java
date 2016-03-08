@@ -37,7 +37,7 @@ public class ComicDetail extends AppCompatActivity {
         System.out.println(comic.getTitle());
 
         mTitle.setText(comic.getTitle());
-        mVolume.setText(comic.getVolume());
+        mVolume.setText("Vol " + comic.getVolume());
         mPublisher.setText(comic.getPublisher());
         mWriter.setText(comic.getWriter());
         mArtist.setText(comic.getArtist());

@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.google.common.collect.Ordering;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -45,7 +47,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         comicsArrayList.addAll(comicsArray);
 
-        Collections.sort(comicsArrayList,Comic.TitleComparator);
+        //Collections.sort(comicsArrayList,Comic.TitleAndVolumeComparator);
+        ArrayList sortedComics = (ArrayList) Ordering.from(Comic.TitleComparator).compound(Comic.ByVolumeComparator).sortedCopy(comicsArray);
+        comicsArrayList = sortedComics;
+
 
 
         showListButton.setOnClickListener(new View.OnClickListener() {

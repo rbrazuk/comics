@@ -5,6 +5,9 @@ import com.orm.SugarRecord;
 import org.joda.time.LocalDate;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 
@@ -107,6 +110,29 @@ public class Comic extends SugarRecord implements Comparable {
             return publisher1.compareTo(publisher2);
         }
     };
+
+    public static Comparator<Comic> TitleAndVolumeComparator = new Comparator<Comic>() {
+        @Override
+        public int compare(Comic c1, Comic c2) {
+            int c;
+            c = c1.getTitle().compareTo(c2.getTitle());
+            if(c==0) {
+                c = c1.getVolume().compareTo(c2.getVolume());
+            }
+            return c;
+        }
+    };
+
+    public static Comparator<Comic> ByVolumeComparator = new Comparator<Comic>() {
+        @Override
+        public int compare(Comic c1, Comic c2) {
+            Integer vol1 = Integer.valueOf(c1.getVolume());
+            Integer vol2 = Integer.valueOf(c2.getVolume());
+            return vol1.compareTo(vol2);
+        }
+    };
+
+
 
 
     @Override
