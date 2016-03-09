@@ -45,11 +45,7 @@ public class ComicDetail extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        
-
         updateData();
-
     }
 
     @Override
