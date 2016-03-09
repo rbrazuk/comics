@@ -9,10 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72566535-4f3c-42d5-8bb2-522b3fa596f5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rbrazuk/comics/ComicDetail.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rbrazuk/comics/ComicDetail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="72566535-4f3c-42d5-8bb2-522b3fa596f5" name="Default" comment="" />
     <ignored path="comics.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
